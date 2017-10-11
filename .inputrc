@@ -1,0 +1,16 @@
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char
+$if term=xterm
+"\e[2A":	history-search-backward
+"\e[2B":	history-search-forward
+"\e[1;2A":	history-search-backward
+"\e[1;2B":	history-search-forward
+"\e[1;3A":	history-search-backward
+"\e[1;3B":	history-search-forward
+"\e[5A":	history-search-backward
+"\e[5B":	history-search-forward
+"\e[1;5A":	history-search-backward
+"\e[1;5B":	history-search-forward
+$endif
