@@ -82,9 +82,9 @@ set ignorecase " Ignore case when searching
 set smartcase " Be case sensitive if at least one uppercase char is used
 vnoremap // y/<C-R>"<CR>
 
-" Buffers - next/previous: F12, Shift-F12.
-nnoremap <silent> <F12> :bn<CR>
-nnoremap <C-F12> :bp<CR>
+" Buffers - next/previous: F10, F9.
+nnoremap <F10> :bn<CR>
+nnoremap <F9> :bp<CR>
 
 " Autocompletion on files
 set wildmode=longest,list
@@ -107,7 +107,7 @@ augroup cline
 augroup END
 
 " Airline customization
-let g:airline_section_y = 'BN: %{bufnr("%")}'
+" let g:airline_section_y = 'BN: %{bufnr("%")}'
 " let g:airline#extensions#branch#use_vcscommand = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -115,6 +115,11 @@ let g:airline#extensions#tabline#enabled = 1
 set background=dark    " Setting dark mode
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+
+" CTags
+set tags+=tags
+" Use control + y to show a list of tag-matches"
+nnoremap <C-y> g<C-]>
 
 set tabstop=3 shiftwidth=3
 au FileType python setl sw=3 sts=3 et
