@@ -10,15 +10,10 @@ endif
 let g:plug_window='topleft new'
 call plug#begin('~/.vim/plugged')
 
-" General Plugins
-Plug 'farmergreg/vim-lastplace' " Open files at same last place
-Plug 'tpope/vim-sensible'
-Plug 'xolox/vim-misc'
-
 " Themes
 Plug 'morhetz/gruvbox'
 
-" Brackets
+"  Brackets
 Plug 'jiangmiao/auto-pairs'
 
 " Formatting
@@ -34,12 +29,18 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/vim-peekaboo'
 
 " Visuals
+Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 
-" Syntax and checking
+"  Syntax and checking
 Plug 'scrooloose/syntastic'
 Plug 'nachumk/systemverilog.vim'
 Plug 'xolox/vim-easytags'
+
+" General Plugins
+Plug 'farmergreg/vim-lastplace' " Open files at same last place
+Plug 'tpope/vim-sensible'
+Plug 'xolox/vim-misc'
 
 call plug#end()
 " <<< Vim-Plug
@@ -80,6 +81,10 @@ set incsearch " Show matches while typing
 set ignorecase " Ignore case when searching
 set smartcase " Be case sensitive if at least one uppercase char is used
 vnoremap // y/<C-R>"<CR>
+
+" Buffers - next/previous: F12, Shift-F12.
+nnoremap <silent> <F12> :bn<CR>
+nnoremap <C-F12> :bp<CR>
 
 " Autocompletion on files
 set wildmode=longest,list
