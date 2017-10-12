@@ -1,5 +1,3 @@
-source /etc/bashrc
-
 FBLK="\[\033[30m\]" # foreground black
 FRED="\[\033[31m\]" # foreground red
 FGRN="\[\033[32m\]" # foreground green
