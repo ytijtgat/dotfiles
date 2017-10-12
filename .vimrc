@@ -33,6 +33,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Pasting
 Plug 'junegunn/vim-peekaboo'
 
+" Visuals
+Plug 'vim-airline/vim-airline'
+
 " Syntax and checking
 Plug 'scrooloose/syntastic'
 Plug 'nachumk/systemverilog.vim'
@@ -98,7 +101,14 @@ augroup cline
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
+" Airline customization
+let g:airline_section_y = 'BN: %{bufnr("%")}'
+" let g:airline#extensions#branch#use_vcscommand = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" Gruvbox customization
 set background=dark    " Setting dark mode
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
 set tabstop=3 shiftwidth=3
