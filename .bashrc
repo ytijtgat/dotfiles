@@ -1,6 +1,6 @@
 FBLK="\[\033[30m\]" # foreground black
 #FRED="\[\033[31m\]" # foreground red
-FRED="\[\033[38;5;160m\]" # foreground red
+FRED="\[\033[38;5;196m\]" # foreground red
 FGRN="\[\033[32m\]" # foreground green
 #FYEL="\[\033[33m\]" # foreground yellow
 FYEL="\[\033[38;5;178m\]" # foreground yellow
