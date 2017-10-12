@@ -1,10 +1,9 @@
 " >>> Include Vim-Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+     \  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall
 endif
-call plug#begin('~/.config/nvim/plugged')
 " <<< Include Vim-Plug
 
 " >>> Vim-Plug
@@ -33,6 +32,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " Pasting
 Plug 'junegunn/vim-peekaboo'
+
+" Visuals
+Plug 'vim-airline/vim-airline'
 
 " Syntax and checking
 Plug 'scrooloose/syntastic'
@@ -99,7 +101,14 @@ augroup cline
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
+" Airline customization
+let g:airline_section_y = 'BN: %{bufnr("%")}'
+" let g:airline#extensions#branch#use_vcscommand = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" Gruvbox customization
 set background=dark    " Setting dark mode
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
 set tabstop=3 shiftwidth=3
