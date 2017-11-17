@@ -54,6 +54,7 @@ bd 40 33 01
 cd 40 33 01
 or 01 05 37 41
 mi 01 05 37 41
+ow 00 34
 ex 00 91 # executable
 
 # data, such as .db, .csv
