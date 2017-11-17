@@ -18,7 +18,7 @@ if [ "$TERM" == "xterm" ] || [ "$TERM" == "screen" ]; then
 	export TERM=xterm-256color
 fi
 
-alias ll="ls -lv --group-directories-first $LS_OPTIONS"
+alias ll="ls -lvh --group-directories-first $LS_OPTIONS"
 
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias psm='/bin/ps --sort pgid,time,size,time,pcpu -o pid,pgid,state,user,start_time,time,size:9,pcpu,command'
@@ -143,8 +143,11 @@ alias cdl=cdl_func
 
 
 # Correct the directory colors
-export LS_OPTIONS='--color=auto'
-eval "`dircolors`"
+alias string2lscolors="grep '\w' | grep -v '^#' | sed 's/#.\+//' | perl -lane 'printf \"%s=%s:\", shift @F, join \";\", @F;'"
+if [ -f ~/.ls_colors ]; then
+   export LS_OPTIONS='--color=auto'
+   export LS_COLORS=$(cat ~/.ls_colors | string2lscolors);
+fi
 
 # Execute all specific commands for this server
 if [ -f ~/.bashrc_specific ]; then
