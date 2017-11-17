@@ -35,7 +35,7 @@ Plug 'vim-airline/vim-airline'
 "  Syntax and checking
 Plug 'scrooloose/syntastic'
 Plug 'nachumk/systemverilog.vim'
-Plug 'xolox/vim-easytags'
+"Plug 'xolox/vim-easytags'
 
 " General Plugins
 Plug 'farmergreg/vim-lastplace' " Open files at same last place
