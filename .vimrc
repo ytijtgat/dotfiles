@@ -1,6 +1,6 @@
 " >>> Include Vim-Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
      \  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall
 endif
@@ -35,7 +35,7 @@ Plug 'vim-airline/vim-airline'
 "  Syntax and checking
 Plug 'scrooloose/syntastic'
 Plug 'nachumk/systemverilog.vim'
-Plug 'xolox/vim-easytags'
+"Plug 'xolox/vim-easytags'
 
 " General Plugins
 Plug 'farmergreg/vim-lastplace' " Open files at same last place
