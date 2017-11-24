@@ -97,6 +97,9 @@ set autoindent " Automatically indent
 
 " Strip whitespace on saving file
 autocmd BufEnter * EnableStripWhitespaceOnSave
+" Show whitespace
+command! Whitespace :set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:< | :set list
+command! Nowhitespace :set nolist
 
 " Enable cursorline
 set cursorline
