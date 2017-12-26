@@ -125,7 +125,6 @@ set tags+=tags
 nnoremap <C-y> g<C-]>
 
 set tabstop=3 shiftwidth=3
-au FileType python setl sw=3 sts=3 et
 set expandtab
 
 noremap jk <ESC>
@@ -133,3 +132,7 @@ let mapleader = "\<Space>"
 
 filetype plugin indent on
 set encoding=utf-8
+
+" Filetype specifics
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal shiftwidth=3 tabstop=3
