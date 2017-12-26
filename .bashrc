@@ -18,6 +18,11 @@ if [ "$TERM" == "xterm" ] || [ "$TERM" == "screen" ]; then
 	export TERM=xterm-256color
 fi
 
+# Execute all specific commands for this server
+if [ -f ~/.bashrc_specific ]; then
+	source ~/.bashrc_specific;
+fi
+
 alias ll="ls -lvh --group-directories-first $LS_OPTIONS"
 
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
@@ -108,8 +113,8 @@ function extract {
     echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
  else
     if [ -f $1 ] ; then
-        # NAME=${1%.*}
-        # mkdir $NAME && cd $NAME
+        NAME=${1%.*}
+        mkdir $NAME && cd $NAME
         case $1 in
           *.tar.bz2)   tar xvjf ../$1    ;;
           *.tar.gz)    tar xvzf ../$1    ;;
@@ -150,7 +155,3 @@ if [ -f ~/.ls_colors ]; then
    export LS_COLORS=$(eval $string2lscolors_cmd)
 fi
 
-# Execute all specific commands for this server
-if [ -f ~/.bashrc_specific ]; then
-	source ~/.bashrc_specific;
-fi
