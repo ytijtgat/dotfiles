@@ -143,10 +143,11 @@ alias cdl=cdl_func
 
 
 # Correct the directory colors
-alias string2lscolors="grep '\w' | grep -v '^#' | sed 's/#.\+//' | perl -lane 'printf \"%s=%s:\", shift @F, join \";\", @F;'"
+string2lscolors="grep '\w' | grep -v '^#' | sed 's/#.\+//' | perl -lane 'printf \"%s=%s:\", shift @F, join \";\", @F;'"
+string2lscolors_cmd="cat ~/.ls_colors | $string2lscolors"
 if [ -f ~/.ls_colors ]; then
    export LS_OPTIONS='--color=auto'
-   export LS_COLORS=$(cat ~/.ls_colors | string2lscolors);
+   export LS_COLORS=$(eval $string2lscolors_cmd)
 fi
 
 # Execute all specific commands for this server
